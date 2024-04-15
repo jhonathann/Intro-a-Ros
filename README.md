@@ -15,28 +15,10 @@ El presente repositorio tiene por objetivo mostrar el funcionamiento de Robot Op
 
 Para abordar el problema, se implementó la siguiente estrategia:
 
-- Se estableció la conexión con el controlador del robot.
-- Se fijó la posición HOME del robot, desde donde se iniciarán las trayectorias.
-- Se identificaron los tres puntos esenciales para llevar a cabo el paletizado.
-- Se desarrollaron las tres rutinas de paletizado requeridas.
-- Se integraron las entradas y salidas para gestionar el flujo del programa y visualizar su estado.
-
-## Diagrama de flujo
-
-El diagrama de flujo presentado se basa en las acciones seriales del brazo robótico con las respectivas restricciones o condiciones que se consideran necesarias para el propósito del robot con diferentes funciones que son accesibles por entrada de datos externos
-
-<p align="center">
-  <img src="/Imágenes/Epson_Main.png" width="400" />
-</p>
-Desde el diagramma main del proyecto sehace el llamado a las diferentes funciones del robot, de modo que realice movimientos consecutivos: Al llamar al paletizado S, el sistema hace un recorrido por nuevec puntos realizado en fomra de S, al llamar el paletizado Z, realiza los movimientos de la matriz en forma de Z y finalmente al llamar la función Externa, realiza movimientos en forma de Z extraponiendo los valores de la matriz original.
-<p align="center">
-  <img src="/Imágenes/Diagrama_FuncionPaletizadoZ.PNG" style="width: 45%; height: auto;" /  />
- <img src="/Imágenes/PaletizadoZ.PNG" style="width: 45%; height: auto;" / />
-</p>
-
-<p align="center">
-  <img src="/Imágenes/Paletizado_Externo.PNG" width="400" />
-</p>
+- Se estableció la configuración para el descriptor de archivos con el fin de establecer condiciones para la entrada de datos.
+- Se separaron los carácterés necesarios para la función específica de cada uno.
+- Se establecio la velocidad del movimiento lienar y angular del sistema.
+- Se diseño un control absoluto y relativo del sistema para una posición y un movimiento preciso.
 
 ## Funciones y comandos utilizados
 
