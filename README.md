@@ -34,26 +34,19 @@ Desde el diagramma main del proyecto sehace el llamado a las diferentes funcione
   <img src="/Imágenes/Paletizado_Externo.PNG" width="400" />
 </p>
 
-## Funciones utilizadas
+## Funciones y comandos utilizados
 
-Con ayuda del manual de epson [[Guia_Manual](/GuiasEPSON/epson_spel_pl_70_language_reference-r700a_rc90_t(v73r4).pdf)] se usaron diferentes funciones internas de EPSON para el diseño de las trayectorias.
+Con ayuda de las diferentes documentaciones de ROS se usaron diferentes funciones y comandos que nos premitieron realizar desplazamientos, establecer nodos, subscripciones, entre otros.
 
-1. Funciones de configuración
-    - *Motor On,Off:* Activa o desactiva la salida de los motores del brazo robótico.
-    - *Power HIGH; LOW:* Establece los niveles de potencia con los que se van a alimentar los motores del brazo robótico para de este modo no forzar las diferentes movimientos.
-    - *Speed:* Indica a nivel portentual la velocidad máxima que van a tener los motores durante cada desplazamiento.
-    - *Accel:* Indica el nivel de aceleración y desaceleración en los motores para llegar a su velocidad máxima y mínima.
+1. Comandos de configuración dl proyecto
+    - *roscore:* Activa o desactiva la salida de los motores del brazo robótico.
+    - *Srosrun turtlesim turtlesim node:* Se esta ejecutando el nodo turtlesim_node del paquete turtlesim. Este nodo es responsable de crear la ventana de simulación de TurtleSim la cual nos permite obtener un entorno gráfico los diferentes movimientos y comportamientos que puede tener el proyecto del turtle
+    - *source devel/setup.bash:* Se esta indicando por un terminal que ejecute los comandos dentro de setup.bash, lo cual configura el entorno para  encontrar los paquetes de ROS que ham sido compilado y utilizarlos correctamente.
 2. Funciones de desplazamiento
     - *Go:* Desplaza el robot a un punto realizando un movimiento puntual, es necesario en este caso mencionar el movimieintomen Z para desplazarlo verticalmente como una función aparte, se aclara que por medio de este movimiento el robot sufre menos esfuerzos por lo que es menos posible que aparezcan errores en este caso.
     - *Move:* Desplaza el robot hasta el punto referenciado usando una interpolación lineal, aunque usa un trayecto mas corto puede afectar alguna de las articulaciones del robot
     - *Wait:* Se encarga de pausar la ejecución del código hasta cumplir una condición específica, ya sea por alguna señal de entrada, un tiempo determinado, entre otras.
     - *Call:* Se considera como un llamado a una función externa a la que se este realizando.
-3. Funciones de entradas y salidas
-    - *MemSw():* Entrada binaria desde memoria, tomando valores desde el 512
-    - *MemOn():* Salida binaria desde memoria, tomando valores desde el 512
-4. Pallet()
-    - Se encarga de diseñar una matriz plana la cual nos facilita recorrerla bajo coordenadas específicas y precisas
-    - El Pallet externo se encarga de formar una columna o una fila adicional a la que se crea por defecto, tambien nos evita el diseño de un ciclo anidado lo que vuelve el sistema mas lento.
 
 ## Integración con Matlab
 
