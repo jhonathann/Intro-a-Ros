@@ -7,6 +7,10 @@
 
 El presente repositorio tiene por objetivo mostrar el funcionamiento de Robot Operating System ROS y su integración tanto con MATLAB como con python. Usando para ello turtlesim y las diferentes tópicos y servición que este provee.
 
+<p align="center">
+  <img src="/Imagenes/IntroRos.PNG" width="1000" />
+</p>
+
 ## Solucion planteada
 
 Para abordar el problema, se implementó la siguiente estrategia:
