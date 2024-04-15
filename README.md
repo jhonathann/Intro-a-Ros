@@ -57,7 +57,7 @@ En la siguiente figura se puede el resultado de llamar este servicio 2 veces, un
 </p>
 Se puede ver claramente como la pose del robot se comporta adecuadamente.
 
-## [Integración con Python](/catkin_ws/devel/lib/hello_turtle/myTeleopKey.py)
+## [Integración con Python](/catkin_ws/src/CodigosPython/myTeleopKey.py)
 
 Para el diseño del código se inició importando las diferentes librerías necesarias para los diferentes movimientos que se esperaba fuera a tener el sistema, inmediatamente se creo el llamado de la función main() con la interrupción *rospy.ROSInterruptException* relacionada con el cierre de nodos causadas por el usuario o el mismo sistema procediendo a crear las diferentes funciones.
 <p align="center">
