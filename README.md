@@ -38,11 +38,9 @@ Con ayuda de las diferentes documentaciones de ROS se usaron diferentes funcione
 
 ## [Integración con Python](/catkin_ws/devel/lib/hello_turtle/myTeleopKey.py)
 
-Para el diseño del código se inició crando un punto nombrado como HOME, desde el cual el robot parte para iniciar las trayectorias. Seguido a esto se crean puntos para el origen, el EjeX y el EjeY, los cuales nos ayudan para referenciar los mapeos que se realizan durante las trayectorias.
-
+Para el diseño del código se inició importando las diferentes librerías necesarias para los diferentes movimientos que se esperaba fuera a tener el sistema, inmediatamente se creo el llamado de la función main() con la interrupción *rospy.ROSInterruptException* relacionada con el cierre de nodos causadas por el usuario o el mismo sistema.
 <p align="center">
-  <img src="/Imágenes/CreacionHerramienta.PNG" />
- <img src="/Imágenes/Puntos_X_Y_Origen.PNG" style="width: 45%; height: auto;" />
+  <img src="/Imágenes/Codigo_TrayectoriaHOME.PNG" />
 </p>
 
 A continuación se crearon los diferentes nombres como referencia para cada una de las salidas, desde la función main se activaron los motores y se establecio una salida de potencia alta en cada uno de estos, una vez pasados por los puntos del estado HOME, se procedió a pasar por los puntos creados de "Origen", "EjeX" y "EjeY", con el fin de evaluar los mapeos que se van a crear atraves de estosl.
