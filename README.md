@@ -45,7 +45,7 @@ Con ayuda de las diferentes documentaciones de ROS se usaron diferentes funcione
   <img src="/Imagenes/Teleport_res.png" width="1000" />
 </p>
 <p align="center">
-  <img src="/Imagenes/Matlab_Transport_res.png" width="1000" />
+  <img src="/Imagenes/Matlab_Tranport_res.png" width="1000" />
 </p>
 
 ## [Integración con Python](/catkin_ws/devel/lib/hello_turtle/myTeleopKey.py)
