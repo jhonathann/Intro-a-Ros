@@ -8,7 +8,7 @@
 El presente repositorio tiene por objetivo mostrar el funcionamiento de Robot Operating System ROS y su integración tanto con MATLAB como con python. Usando para ello turtlesim y las diferentes tópicos y servición que este provee.
 
 <p align="center">
-  <img src="/Imagenes/Matlab_subscription.png" width="1000" />
+  <img src="/Imagenes/IntroRos.PNG width="1000" />
 </p>
 
 ## Solucion planteada
@@ -36,7 +36,7 @@ Con ayuda de las diferentes documentaciones de ROS se usaron diferentes funcione
 
 ## [Integración con Matlab](/Lab3)
 <p align="center">
-  <img src="/Imagenes/IntroRos.PNG" width="1000" />
+  <img src="/Imagenes/Matlab_subscription.png width="1000" />
 </p>
 
 ## [Integración con Python](/catkin_ws/devel/lib/hello_turtle/myTeleopKey.py)
