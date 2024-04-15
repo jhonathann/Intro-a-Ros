@@ -5,12 +5,7 @@
 - Julian Leonardo Villalobos Jiménez - jlvillalovbosj@unal.edu.co
 - Jhonathann Alexander Gómez Velásquez - jhagomezve@unal.edu.co
 
-El presente repositorio tiene por objetivo dar a conocer el funcionamiento del brazo robótico Robot VT6L de la marca EPSON, en donde por medio de funciones y comandos que nos permitiran otorgarle movimientos deseados y precisos al robot se realicen actividades de un entorno industrial.
-
-<p align="center">
-  <img src="/Imágenes/Robot_VT6L.PNG" style="width: 45%; height: auto;" /  />
- <img src="/Imágenes/Robot_VT6L_Sim.PNG" style="width: 30%; height: auto;" / />
-</p>
+El presente repositorio tiene por objetivo mostrar el funcionamiento de Robot Operating System ROS y su integración tanto con MATLAB como con python. Usando para ello turtlesim y las diferentes tópicos y servición que este provee.
 
 ## Solucion planteada
 
