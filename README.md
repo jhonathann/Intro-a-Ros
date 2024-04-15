@@ -35,9 +35,12 @@ Con ayuda de las diferentes documentaciones de ROS se usaron diferentes funcione
     - *Call:* Se considera como un llamado a una función externa a la que se este realizando.
 
 ## [Integración con Matlab](/Lab3)
+En primer lugar, se debe cerrar la conexión usando el comando <i>rosshutdown</i>. Acto seguido se hizo uso del comando <i>rosinit</i> para realizar la conexión con el nodo maestro local.
+Se realizó la suscripción al tópico pose usando el comando <i>rossubscriber</i> del toolbox de Ros de Matlab. Esta suscripción permite acceder al evento en el que se actualiza la pose del robot y reaccionar adecuadamente.
 <p align="center">
   <img src="/Imagenes/Matlab_subscription.png" />
 </p>
+También se tiene acceso al último mensaje recibido por la suscripción mostrado en la siguiente figura.
 <p align="center">
   <img src="/Imagenes/Subs_res.png" />
 </p>
