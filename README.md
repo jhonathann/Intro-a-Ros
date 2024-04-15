@@ -55,7 +55,9 @@ Con ayuda del manual de epson [[Guia_Manual](/GuiasEPSON/epson_spel_pl_70_langua
     - Se encarga de diseñar una matriz plana la cual nos facilita recorrerla bajo coordenadas específicas y precisas
     - El Pallet externo se encarga de formar una columna o una fila adicional a la que se crea por defecto, tambien nos evita el diseño de un ciclo anidado lo que vuelve el sistema mas lento.
 
-## [Código main EPSON](/Lab2/Main.prg)
+## Integración con Matlab
+
+## Integración con Python
 
 Para el diseño del código se inició crando un punto nombrado como HOME, desde el cual el robot parte para iniciar las trayectorias. Seguido a esto se crean puntos para el origen, el EjeX y el EjeY, los cuales nos ayudan para referenciar los mapeos que se realizan durante las trayectorias.
 
