@@ -31,20 +31,28 @@ Con ayuda de las diferentes documentaciones de ROS se usaron diferentes funcione
 
 ## [Integración con Matlab](/Lab3)
 En primer lugar, se debe cerrar la conexión usando el comando <i>rosshutdown</i>. Acto seguido se hizo uso del comando <i>rosinit</i> para realizar la conexión con el nodo maestro local.
+Se crea un publicador al tópico que controla la velicidad tanto angular como linear del robot. Se modifica el mensaje a mandar de tal forma que se envie una velocidad lineal en x de 1 (y por la forma en que funciona este publicador, actuará con esta velocidad por 1 segundo).
 Se realizó la suscripción al tópico pose usando el comando <i>rossubscriber</i> del toolbox de Ros de Matlab. Esta suscripción permite acceder al evento en el que se actualiza la pose del robot y reaccionar adecuadamente.
+Por último se realizó el envio del mensaje actualizado lo que genera un cambio en la velocidad del robot, y por lo tanto varios cambios en la pose del robot. 
 <p align="center">
   <img src="/Imagenes/Matlab_subscription.png" />
 </p>
-También se tiene acceso al último mensaje recibido por la suscripción mostrado en la siguiente figura.
+
+En la siguiente figura, se puede apreciar el resultado del último de los cambios en la pose:
+
 <p align="center">
   <img src="/Imagenes/Subs_res.png" />
 </p>
+
+Para poder modificar la pose del robot se deben usar los servicios expuestos por turtlesim. Más específicamente, el servicio <i>TeleportAbsolute</i> mediante el cuál se puede realizar este cambio. Para realizar este cambio se crea un cliente para el servicio de "Teleport Absolute" mediante el comando <i>rossvcclient</i> en donde se especifica el servicio y el tipo de mensaje asociado al servicio. Después se crea y configura el mensaje, en donde en este caso se tienen los parámetros X, Y y Theta de la pose del robot. y por último se utiliza la función <i>call</i> para hacer la llamada al servicio.
 <p align="center">
   <img src="/Imagenes/Teleport_res.png" />
 </p>
+En la siguiente figura se puede el resultado de llamar este servicio 2 veces, uno con parámetos(1,1,0) y después con (10,10,0). 
 <p align="center">
   <img src="/Imagenes/Matlab_Tranport_res.png"/>
 </p>
+Se puede ver claramente como la pose del robot se comporta adecuadamente.
 
 ## [Integración con Python](/catkin_ws/devel/lib/hello_turtle/myTeleopKey.py)
 
