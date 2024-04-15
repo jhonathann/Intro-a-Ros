@@ -1,0 +1,17 @@
+%%
+rosshutdown;
+rosinit; %Conexi ́on con nodo maestro
+%%
+teleportClient = rossvcclient('/turtle1/teleport_absolute','turtlesim/TeleportAbsolute');
+teleportMsg= rosmessage(teleportClient);
+teleportMsg.X = 1;
+teleportMsg.Y= 1;
+teleportMsg.Theta=0;
+velMsg = rosmessage(velPub); %Creaci ́on de mensaje
+poseSubs = rossubscriber('/turtle1/pose','turtlesim/Pose');
+%%
+velMsg.Linear.X = 1; %Valor del mensaje
+%send(teleportClient,teleportMsg); %Envio
+call(teleportClient,teleportMsg);
+pause(1)
+disp(poseSubs.LatestMessage);
