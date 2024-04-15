@@ -25,10 +25,13 @@ Para abordar el problema, se implementó la siguiente estrategia:
 Con ayuda de las diferentes documentaciones de ROS se usaron diferentes funciones y comandos que nos premitieron realizar desplazamientos, establecer nodos, subscripciones, entre otros.
 
 1. Comandos de configuración dl proyecto
-    - *roscore:* Activa o desactiva la salida de los motores del brazo robótico.
+    - *roscore:* Activa el nodo maestro.
     - *Srosrun turtlesim turtlesim node:* Se esta ejecutando el nodo turtlesim_node del paquete turtlesim. Este nodo es responsable de crear la ventana de simulación de TurtleSim la cual nos permite obtener un entorno gráfico los diferentes movimientos y comportamientos que puede tener el proyecto del turtle
     - *source devel/setup.bash:* Se esta indicando por un terminal que ejecute los comandos dentro de setup.bash, lo cual configura el entorno para  encontrar los paquetes de ROS que ham sido compilado y utilizarlos correctamente.
-
+   - *rosinit:* Activa la conexión al nodo maestro local.
+   - *rosshutdown:* Cierra la conexión al nodo maestro local.
+   - *rossubscriber:* Crea un subscriptor a un tópico específico con un tipo de mensaje específico.
+   - *rosscvclient:* Genera un cliente para un servicio.
 ## [Integración con Matlab](/Lab3)
 En primer lugar, se debe cerrar la conexión usando el comando <i>rosshutdown</i>. Acto seguido se hizo uso del comando <i>rosinit</i> para realizar la conexión con el nodo maestro local.
 Se crea un publicador al tópico que controla la velicidad tanto angular como linear del robot. Se modifica el mensaje a mandar de tal forma que se envie una velocidad lineal en x de 1 (y por la forma en que funciona este publicador, actuará con esta velocidad por 1 segundo).
