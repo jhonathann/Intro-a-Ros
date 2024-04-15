@@ -28,11 +28,6 @@ Con ayuda de las diferentes documentaciones de ROS se usaron diferentes funcione
     - *roscore:* Activa o desactiva la salida de los motores del brazo robótico.
     - *Srosrun turtlesim turtlesim node:* Se esta ejecutando el nodo turtlesim_node del paquete turtlesim. Este nodo es responsable de crear la ventana de simulación de TurtleSim la cual nos permite obtener un entorno gráfico los diferentes movimientos y comportamientos que puede tener el proyecto del turtle
     - *source devel/setup.bash:* Se esta indicando por un terminal que ejecute los comandos dentro de setup.bash, lo cual configura el entorno para  encontrar los paquetes de ROS que ham sido compilado y utilizarlos correctamente.
-2. Funciones de desplazamiento
-    - *Go:* Desplaza el robot a un punto realizando un movimiento puntual, es necesario en este caso mencionar el movimieintomen Z para desplazarlo verticalmente como una función aparte, se aclara que por medio de este movimiento el robot sufre menos esfuerzos por lo que es menos posible que aparezcan errores en este caso.
-    - *Move:* Desplaza el robot hasta el punto referenciado usando una interpolación lineal, aunque usa un trayecto mas corto puede afectar alguna de las articulaciones del robot
-    - *Wait:* Se encarga de pausar la ejecución del código hasta cumplir una condición específica, ya sea por alguna señal de entrada, un tiempo determinado, entre otras.
-    - *Call:* Se considera como un llamado a una función externa a la que se este realizando.
 
 ## [Integración con Matlab](/Lab3)
 En primer lugar, se debe cerrar la conexión usando el comando <i>rosshutdown</i>. Acto seguido se hizo uso del comando <i>rosinit</i> para realizar la conexión con el nodo maestro local.
@@ -64,29 +59,27 @@ En la función de ingreso por teclado se inicio creando una entrada para los des
   <img src="/Imagenes/funcionTeclado.PNG" />
 </p>
 
-Para la función de movimientos se hizo usop del bojeto *publisher* de la librería rospy, en esta se indicó el tópico *cmd_vel* mostrando el tipo de función que iba a tener el nodo turtle1 y tipo de mensaje *geometry_msgs* 
+Para la función de movimientos se hizo uso del bojeto *publisher* de la librería rospy, en esta se indicó el tópico *cmd_vel* mostrando el tipo de función que iba a tener el nodo turtle1 y tipo de mensaje *geometry_msgs* 
 representando la forma de mensaje que se va a enviar, se creo el mensaje con la función *Twist()* para configurar la velocidad de este por medio de *.lineal.x* para un moviminento lineal y *.angular.z* para una rotación. Finalmente se procedió a enviar el mensaje del publicacod a una frecuencia de envio de 10hz.
 <p align="center">
   <img src="/Imagenes/funcionMovimientoLinealAngular.PNG" />
 </p>
 
-Para la función de movimientos 
+Para establecer la posición absoluta en el punto central del sistema, se hace uso del servicio de *TeleportAbsolute* del nodo de turtle1. Inicialmente con la ayuda de la librería *ServiceProxy* se busca establecer una conexión con el sistma del nodo turtle1 y guardarñp en la variable teleport_mainPosition, se crea la variable req para instanciar las peticiones del cual para este caso constan de la posicipon x, y y una orientación fija. Finalmente se realiza la comunicación con el nodo en base a las peticiones establecidas
 
 <p align="center">
-  <img src="/Imagenes/LlamadoMain.PNG" />
+  <img src="/Imagenes/funcionAbsoluta.PNG" />
 </p>
 
-Se creó la función paletizado externo la cual consiste en el diseño deun pallet através de una matriz 4x4 y que pase por los 16 puntos entre los cuales se encuentran las posiciones de "Origen", del "EjeX" y del "EjeY" por medio de una fuinción ciclica de 16 posiciones.
+Para indicar un movimiento preciso en base a la última pose del dispositivo, se hace uso del servicio TeleportRelative, el cual al contar con una estructura similar al servicio absoluto se hace un cambio úncamente en sus argumentos, ya que este se basa en sus ángulos de euler indicando un movmiento angular y lineal.
 
 <p align="center">
-  <img src="/Imagenes/LlamadoMain.PNG" />
+  <img src="/Imagenes/funcionRelativa.PNG" />
 </p>
 
-Finalmente se diseño en la función main un ciclo el cual leyera cada una de las entradas, al tener una señal de entrada en el bit 512, el sistema activara la salida del bit 515 y llamara la función del paletizado Z, por otro lado al activar la entrada del bit 513 este llamara la función del paletizado en S activando la salida del biot 516, y finalmente con la señal de entrada del bit 514 se llamara la funcion del paletizado externo activando del mismo modo la salida del bit 517.
+Finalmente se diseñó en la función main un llamado a las diferentes funciones creadas basados en los requerimientos tales que al tener una entrada por teclado *'w'* o *'s'* se llama al movimiento lienal del proyecto turtle, con un ingreso *'a'* y *'d'* se hacen rotaciones sobre su eje z, con la entrada *'r'* se realiza una rotación de 180° de la posición en la que se encuentre y con una entrada *'space'* vuelve al punto centro del proyecto con x=5.5, y=5.5 y theta=0.
 
 <p align="center">
-  <img src="/Imagenes/LlamadoMain.PNG" />
+  <img src="/Imagenes/funcionMain.PNG" />
 </p>
-
-Para acceder al código puede seleccionar el subtítuo de esta sección "Código main EPSON" o darle clic [aquí](/Lab2/Main.prg)
 
