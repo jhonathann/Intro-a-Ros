@@ -8,7 +8,7 @@
 El presente repositorio tiene por objetivo mostrar el funcionamiento de Robot Operating System ROS y su integración tanto con MATLAB como con python. Usando para ello turtlesim y las diferentes tópicos y servición que este provee.
 
 <p align="center">
-  <img src="/Imagenes/IntroRos.PNG" width="1000" />
+  <img src="/Imagenes/Matlab_subscription.png" width="1000" />
 </p>
 
 ## Solucion planteada
@@ -34,7 +34,10 @@ Con ayuda de las diferentes documentaciones de ROS se usaron diferentes funcione
     - *Wait:* Se encarga de pausar la ejecución del código hasta cumplir una condición específica, ya sea por alguna señal de entrada, un tiempo determinado, entre otras.
     - *Call:* Se considera como un llamado a una función externa a la que se este realizando.
 
-## Integración con Matlab
+## [Integración con Matlab](/Lab3)
+<p align="center">
+  <img src="/Imagenes/IntroRos.PNG" width="1000" />
+</p>
 
 ## [Integración con Python](/catkin_ws/devel/lib/hello_turtle/myTeleopKey.py)
 
@@ -74,15 +77,5 @@ Finalmente se diseño en la función main un ciclo el cual leyera cada una de la
 </p>
 
 Para acceder al código puede seleccionar el subtítuo de esta sección "Código main EPSON" o darle clic [aquí](/Lab2/Main.prg)
-
-## Videos de pruebas de funcionamiento
-
-Simulación
-
-https://github.com/jlvillalobosj/Robot_EPSON/assets/57506705/6cfeb508-4afe-40cf-9301-b48298c972de
-
-Prueba Real
-
-https://github.com/jlvillalobosj/Robot_EPSON/assets/57506705/5ce8e1dd-460b-4427-b27b-d27af2a8e11b
 
 
