@@ -91,3 +91,5 @@ Finalmente se diseñó en la función main un llamado a las diferentes funciones
   <img src="/Imagenes/funcionMain.PNG" />
 </p>
 
+[screen-recording.webm](https://github.com/jhonathann/Intro-a-Ros/assets/57506705/d58d1299-fac2-4a72-9d05-03f57812d0ab)
+
